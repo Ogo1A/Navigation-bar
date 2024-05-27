@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+
+  box-sizing: border-box;
+}
+
+nav {
+  height: 70px;
+  background: rgb(20, 20, 20);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+
+  justify-content: space-between;
+  color: rgb(220, 220, 220);
+}
+.logo h2 {
+  text-decoration: overline;
+  font-style: italic;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  color: rgb(0, 206, 206);
+}
+
+.nav-items {
+  display: flex;
+}
+.overview,
+.account {
+  display: flex;
+}
+.overview {
+  margin-right: 4rem;
+}
+nav a {
+  text-decoration: none;
+  color: rgb(220 220 220);
+}
+
+nav a:hover {
+  color: #a0ebfd;
+}
+
+nav ::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0%;
+  background: #a0ebfd;
+  transition: all ease-in-out 300ms;
+}
+nav svg,
+.nav-items h3,
+#check,
+.menu {
+  display: none;
+}
+nav a:hover::after {
+  width: 100%;
+}
+nav li {
+  list-style: none;
+  margin: 0 0.5rem;
+}
+/*Hero Section*/
+.hero-section {
+  height: 100vh;
+  background: url("backi.jpg") center no-repeat;
+  background-size: cover;
+}
+@media (max-width: 750px) {
+  .nav-items {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    height: 100vh;
+    width: 250px;
+    background: rgb(20, 20, 20);
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2rem;
+    transition: all ease-in-out 500ms;
+  }
+
+  .overview,
+  .account {
+    flex-direction: column;
+    width: auto;
+  }
+  .overview {
+    margin: 0;
+  }
+  .nav-items h3 {
+  }
+  nav a {
+    display: inline-block;
+  }
+  nav a:hover {
+    margin-left: 2px;
+    transition: all ease-in-out 300ms;
+  }
+
+  nav svg {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .nav-items h3 {
+    display: inline-block;
+    font-weight: 400px;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 1rem;
+  }
+  nav li {
+    margin: 1rem 0;
+  }
+
+  .menu {
+    z-index: 99;
+    position: fixed;
+    cursor: pointer;
+    display: inline-block;
+    right: 2.5rem;
+  }
+  #check:checked ~ .nav-items {
+    right: 0;
+  }
+}
